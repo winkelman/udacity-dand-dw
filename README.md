@@ -8,3 +8,7 @@ The map data is from the open source https://www.openstreetmap.org which often h
 The map area chosen for the project was the [Guadalajara Metropolitan Area](https://en.wikipedia.org/wiki/Guadalajara_Metropolitan_Area) in the state of Jalisco, Mexico. The OpenStreetMap area can be found [here](http://www.openstreetmap.org/export#map=10/20.6771/-103.3477) and the map's complete dataset can be downloaded through the Overpass API [here](http://overpass-api.de/api/map?bbox=-103.8606,20.3639,-102.8348,20.9884).
 
 The raw .osm XML file can be cleaned and converted to JSON by running `process_data.py`, and the clean JSON file can be imported to MongoDB with `import_mongo.py`
+
+The project report can be viewed here:
+
+https://github.com/winkelman/udacity-dand-dw-project/blob/master/report.pdf
