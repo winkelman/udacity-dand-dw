@@ -9,6 +9,6 @@ The map area chosen for the project was the [Guadalajara Metropolitan Area](http
 
 The raw .osm XML file can be cleaned and converted to JSON by running `process_data.py`, and the clean JSON file can be imported to MongoDB with `import_mongo.py`
 
-The project report can be viewed here:
 
+The project report can be viewed here:
 https://github.com/winkelman/udacity-dand-dw-project/blob/master/report.pdf
