@@ -3,12 +3,13 @@
 
 import re
 from scrape_cities import csv_to_list
-from audit_fields import get_bad_cuisines
+#from audit_fields import get_bad_cuisines
 
 
 # decode utf-8 and render accents
 cities = csv_to_list("cities.csv")
 cities = [city.decode('utf-8') for city in cities]
+cities.append(u'Tonalá') # for some reason this major city not in wiki
 
 
 def has_good_city_name(city):
@@ -108,7 +109,6 @@ def update_cuisine(cuisine):
 '''
 
 
-'''
+
 if __name__ == "__main__":
-	print update_city_name("Tonal")
-'''
+	#print update_city_name("Tonal")

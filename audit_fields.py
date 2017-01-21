@@ -53,6 +53,24 @@ def audit_tag_values(filename, attribute):
         return order_dict_by_val(vals_dict)
 
 
+def cross_ref_sep(filename):
+    count = 0
+    education_type = ['school', 'kindergarten', 'college', 'university', 'college;school']
+    for event, elem in ET.iterparse(filename):
+        has_sep, has_school = False, False
+        for attr in elem.iter("tag"):
+            k = attr.attrib["k"]
+            v = attr.attrib["v"]
+            if k == "SEP:CLAVEESC":
+                has_sep = True
+            if k == "amenity" == k and v in education_type:
+                has_school = True
+            if has_sep and has_school:
+                count += 1
+                break
+    return count
+
+
 lower = re.compile(r'^([a-z]|_)*$')
 
 '''
@@ -70,7 +88,9 @@ def get_bad_cuisines(filename):
 
 if __name__ == "__main__":
 
-    print audit_tag_values("gdl.osm", "cuisine")
+    pprint.pprint(audit_tag_values("gdl.osm", "cuisine"))
+    #print cross_ref_sep("gdl.osm")
+
     #filename = 'gdl-sample.osm'
     #print get_bad_cuisines(filename)
 
